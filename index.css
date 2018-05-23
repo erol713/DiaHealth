@@ -1,0 +1,113 @@
+html{
+
+	
+}
+
+body{
+
+	background: none;
+	text-align: center;
+	position: relative;
+}
+
+
+
+.nav-link{
+
+	color: #fff !important;
+}
+.nav-tabs{
+	border:none;
+}
+
+.nav-link.active {
+  color: #D90A8C !important;
+  background: none !important;
+  border-bottom: 1px solid #D90A8C !important;
+	border-top: none;
+	border-left: none;
+	border-right: none;
+}
+
+.nav-link:hover{
+
+	color:#D90A8C !important;
+	border-bottom: 1px solid #D90A8C !important;
+	border-top: none;
+	border-left: none;
+	border-right: none;
+	padding-bottom: 5px !important; 
+}
+
+.navbar-brand{
+
+	font-size: 300%;
+
+}
+
+.navbar{
+	padding-bottom: 1px !important;
+	padding-top: 1px !important;
+	border-bottom: 3px solid #D90A8C !important;
+}
+
+#signIn{
+
+	margin-top: 40px;
+}
+
+input{
+
+	
+	padding-left: 20px;
+}
+
+.card .card-body{
+
+	text-align: justify;
+}
+
+.card-img-top{
+
+	height:200px;
+}
+
+
+
+
+.jumbotron{
+
+          background:url("photos/jumbo1.jpg") ;
+          height: 70vh;
+          background-size: cover;
+          background-repeat: no-repeat;
+          text-align: center;
+          margin-top: 50px;
+
+}
+
+.textJumbo{
+	color:#D90A8C;
+	margin-top: 200px;
+
+}
+
+#footer{
+          color:#fff;
+          background-color:#000;
+          padding-top: 150px;
+          padding-bottom: 150px;
+          margin-top: 50px;
+          text-align: center;
+
+}
+
+#icon{
+
+          width:200px;
+        }
+
+#about{
+
+	margin-top: 100px;
+}
