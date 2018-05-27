@@ -1,12 +1,7 @@
 <?php
 session_start();
 
-
-$link = new PDO("mysql:host=localhost;dbname=projekat", "root", "");
-$error = $db->errorInfo();
-    if (!is_null($error[2])) {
-        echo "Query failed! " . $error[2];
-    }
+include 'conn.php';
 
 
     if (isset($_POST)) {
