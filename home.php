@@ -1,36 +1,7 @@
 <?php 
    session_start();
-   $link = mysqli_connect ("localhost", "id5871651_erol", "sarajevo87", "id5871651_projekat");
    
-
-    if (mysqli_connect_error()) {
-
-        die('Error');
-    }
-
-
-    if ($_POST) {
-
-      if (!empty($_POST["value"])) {
-
-        $email= $_SESSION['email'];
-        $query = "INSERT INTO data (email, sugar, category) 
-                VALUES('"
-                .mysqli_real_escape_string($link, $email)."', '"
-                .mysqli_real_escape_string($link, $_POST['value'])."', '"
-                .mysqli_real_escape_string($link, $_POST['category']).
-                "')";
-
-                 $sugar = mysqli_real_escape_string($link, $_POST['value']);
-                 $_SESSION['sugar'] = $sugar;
-
-                mysqli_query($link, $query);
-              
-
-    }
-
-  }  
-
+include 'conn.php';
 
 
  ?>
