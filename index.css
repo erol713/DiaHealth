@@ -1,16 +1,18 @@
-html{
 
-	
-}
 
 body{
 
-	background: none;
+	
 	text-align: center;
 	position: relative;
 }
 
+.myContainer{
+	width: 80%;
+	margin: auto;
+	overflow: hidden;
 
+}
 
 .nav-link{
 
@@ -48,7 +50,7 @@ body{
 .navbar{
 	padding-bottom: 1px !important;
 	padding-top: 1px !important;
-	border-bottom: 3px solid #D90A8C !important;
+	border-bottom: 3px solid #D83F78 !important;
 }
 
 #signIn{
@@ -87,8 +89,8 @@ input{
 }
 
 .textJumbo{
-	color:#D90A8C;
-	margin-top: 200px;
+	color:#000;
+	margin-top: 250px;
 
 }
 
@@ -105,9 +107,56 @@ input{
 #icon{
 
           width:200px;
-        }
+}
 
 #about{
 
 	margin-top: 100px;
+}
+
+@media screen and (max-width: 768px){
+
+		.textJumbo h1{
+			font-size: 300% !important;
+			margin-top: -50px !important;
+
+			color:#D83F78;
+		}
+
+		#semafor{
+
+			float: none;
+			margin:auto;
+		}
+
+
+		#quick_add_form{
+			margin: 100px 10px 50px 50px !important;
+			
+			width: 100% !important;
+
+			
+
+		}
+
+		#quick_add_form .btn{
+			
+			float: left;
+			margin:auto;
+		}
+		#div_id_category, #div_id_value{
+			margin:auto;
+			padding-bottom: 5px;
+			width: 62%;
+		}
+		
+
+		#quick{
+			
+			margin-top: 10px;
+			margin-right: 50%; 
+			
+		}
+
+
 }

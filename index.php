@@ -7,12 +7,22 @@ $password = "";
 $email    = "";
 $errors = ''; 
 
-// connect to the database
-$link = mysqli_connect('localhost', 'root', '', 'projekat');
 
+// connect to the database
+
+$link = mysqli_connect ("localhost", "id5871651_erol", "sarajevo87", "id5871651_projekat");
+   
+
+    if (mysqli_connect_error()) {
+
+        die('Error');
+    }
 
 
 //login
+
+
+
 
 if (isset($_POST['logIn'])) {
   $email = mysqli_real_escape_string($link, $_POST['email']);
@@ -30,10 +40,12 @@ if (isset($_POST['logIn'])) {
   if ($errors == '') {
     
     $query = "SELECT * FROM users WHERE email='$email' AND password='$password'";
-    $results = mysqli_query($link, $query);
-    if (mysqli_num_rows($results) == 1) {
-      $_SESSION['email'] = $email;
-      $_SESSION['success'] = "You are now logged in";
+    $result = $link->query($query);
+    $row = $result->fetch_assoc();
+    if (mysqli_num_rows($result) == 1) {
+
+      $_SESSION['name'] = $row["name"];
+      $_SESSION['email'] = $row["email"];
       header('location: home.php');
     }else {
       $errors .= "Wrong username/password combination<br>";
@@ -59,13 +71,15 @@ if (isset($_POST['logIn'])) {
     <link rel="stylesheet" type="text/css" href="index.css">
 
     <title>DiaHealth</title>
+
+    
   </head>
 
 
   <body data-spy="scroll" data-target="#navbar" data-offset="150">
 
-    <nav class="navbar navbar-expand-lg  fixed-top navbar-dark"  id ="navbar" style="background-color: #FFC3CC;">
-        <a class="navbar-brand" href="#"><img src="photos/drop.png" style="width:20px; margin-bottom: 10px;"> Dia<span style="color:#D90A8C;">Health</span></a>
+    <nav class="navbar navbar-expand-lg  fixed-top navbar-dark"  id ="navbar" style="background-color: #000;">
+        <a class="navbar-brand" href="#"><img src="photos/drop2.png" style="width:50px; margin-bottom: 10px; margin-right: -18px;"> Dia<span style="color:#D83F78;">Health</span></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -90,22 +104,22 @@ if (isset($_POST['logIn'])) {
         </div>
       </nav>
 
-      <div class="jumbotron" id="jumbotron">
+      <div class="jumbotron" id="jumbotron" style="height: 100vh;">
         <div class="textJumbo">
-          <h1 class="display-4">Keep track of and manage your condition</h1>
-          <button style="color:#FFF;" type="submit" class="btn btn-primary" id="signIn"><a href="signUp.php" style="text-decoration: none; color:#fff; ">Sign up!</a></button>
+          <h1 class="display-4" style="margin-top: 350px; margin-bottom: 0;">Keep track of and manage your condition</h1>
+          <button style="color:#FFF;" type="submit" class="btn btn-primary" id="signIn"><a href="signUp.php" style="text-decoration: none; color:#fff;  ">Sign up!</a></button>
         </div>
       </div>
    
 
     <div class="container" id="about">
 
-      <h2 style="color:#FFC3CC; margin-bottom: 100px;">What will you will be able to do?</h2>
+      <h2 style="color:#D83F78; margin-bottom: 50px;">What will you will be able to do?</h2>
       <div class="card-deck">
         <div class="card">
           <img class="card-img-top" src="photos/diab1.jpg" alt="Card image cap">
           <div class="card-body">
-            <h5 class="card-title"><i class="fab fa-angellist"></i>Card title</h5>
+            
             <p class="card-text">+ Log your values wherever you are</p><br>
             <p class="card-text">+ Send detailed reports to your doctor</p>
           </div>
@@ -114,7 +128,7 @@ if (isset($_POST['logIn'])) {
         <div class="card">
           <img class="card-img-top" src="photos/data1.jpg" alt="Card image cap">
           <div class="card-body">
-            <h5 class="card-title"><i class="fas fa-anchor"></i>Card title</h5>
+            
             <p class="card-text">+ Analyze and understand the data at a glance</p><br>
             <p class="card-text">+ Keep your diabetis under control</p>
           </div>
@@ -122,19 +136,37 @@ if (isset($_POST['logIn'])) {
         <div class="card">
           <img class="card-img-top" src="photos/food1.jpg" alt="Card image cap">
           <div class="card-body">
-            <h5 class="card-title"><i class="fas fa-address-book"></i>Card title</h5>
+            
             <p class="card-text">+ Track your food intake and monitor your diet</p>
           </div>
         </div>
       </div>
      </div>
 
+     
+
+      <div class="card-group container" style="margin-top:150px; ">
+        <div class="card container" style="width: 15rem;  border:none;">
+          <img class="card-img-top" src="photos/bckg3.jpg" alt="Card image cap">
+          <div class="card-body">            
+          </div>
+        </div>
+        <div id = "semafor" class="card" style="width: 15rem; border:none;">
+          <img  class="card-img-top" src="photos/a1c.jpg" alt="Card image cap">
+          <div class="card-body">
+            
+            <p class="card-text" style="text-align: center;">+ Sign Up and monitor your health easily.</p>
+            
+          </div>
+        </div>
+      </div>
+
 
     <div id="footer">
        
       <div>
         
-        <h1 style="color:#FFC3CC;">Soon you can download the app!</h1>
+        <h1 style="color:#D83F78;">Soon you can download the app!</h1>
 
        
 
