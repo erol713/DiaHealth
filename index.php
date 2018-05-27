@@ -9,14 +9,7 @@ $errors = '';
 
 
 // connect to the database
-
-$link = mysqli_connect ("localhost", "id5871651_erol", "sarajevo87", "id5871651_projekat");
-   
-
-    if (mysqli_connect_error()) {
-
-        die('Error');
-    }
+include 'conn.php';
 
 
 //login
